@@ -5,4 +5,8 @@ contract SimpleVerifier
     function verify(bytes32 messageHash, uint8 v, bytes32 r, bytes32 s, address signer) pure public returns(bool) {
         return ecrecover(messageHash, v, r, s) == signer;
     }
+
+    function recoverSigner(bytes32 messageHash, uint8 v, bytes32 r, bytes32 s) pure public returns(address) {
+        return ecrecover(messageHash, v, r, s);
+    }
 }
