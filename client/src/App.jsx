@@ -3,11 +3,15 @@ import Intro from "./components/Intro/";
 import Setup from "./components/Setup";
 import Demo from "./components/Demo";
 import Footer from "./components/Footer";
+import Signer from "./components/Signer";
 import "./App.css";
 
 function App() {
   return (
     <EthProvider>
+      <div>
+        <Signer></Signer>
+      </div>
       <div id="App" >
         <div className="container">
           <Intro />
