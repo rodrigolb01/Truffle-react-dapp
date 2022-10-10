@@ -5,37 +5,53 @@
   https://trufflesuite.com/docs/truffle/getting-started/writing-external-scripts
 */
 
-const SimpleStorage = artifacts.require("SimpleStorage");
+// const SimpleStorage = artifacts.require("SimpleStorage");
+
+// module.exports = async function (callback) {
+//   const deployed = await SimpleStorage.deployed();
+
+//   const currentValue = (await deployed.read()).toNumber();
+//   console.log(`Current SimpleStorage value: ${currentValue}`);
+
+//   const { tx } = await deployed.write(currentValue + 1);
+//   console.log(`Confirmed transaction ${tx}`);
+
+//   const updatedValue = (await deployed.read()).toNumber();
+//   console.log(`Updated SimpleStorage value: ${updatedValue}`);
+
+//   callback();
+// };
+
+// const SimpleVerifier = artifacts.require("SimpleVerifier");
+
+// module.exports = async function (callback) {
+//   const deployed = await SimpleVerifier.deployed();
+
+//   const currentValue = (await deployed.read()).toNumber();
+//   console.log(`Current SimpleVerifier value: ${currentValue}`);
+
+//   const { tx } = await deployed.write(currentValue + 1);
+//   console.log(`Confirmed transaction ${tx}`);
+
+//   const updatedValue = (await deployed.read()).toNumber();
+//   console.log(`Updated SimpleVerifier value: ${updatedValue}`);
+
+//   callback();
+// };
+
+const SolRsaVerify = artifacts.require("SolRsaVerify");
 
 module.exports = async function (callback) {
-  const deployed = await SimpleStorage.deployed();
+  const deployed = await SolRsaVerify.deployed();
 
   const currentValue = (await deployed.read()).toNumber();
-  console.log(`Current SimpleStorage value: ${currentValue}`);
+  console.log(`Current SolRsaVerifier value: ${currentValue}`);
 
   const { tx } = await deployed.write(currentValue + 1);
   console.log(`Confirmed transaction ${tx}`);
 
   const updatedValue = (await deployed.read()).toNumber();
-  console.log(`Updated SimpleStorage value: ${updatedValue}`);
+  console.log(`Updated SolRsaVerifier value: ${updatedValue}`);
 
   callback();
-};
-
-const SimpleVerifier = artifacts.requite("SimpleVerifier");
-
-module.exports = async function (callback) {
-  const deployed = await SimpleVerifier.deployed();
-
-  const currentValue = (await deployed.read()).toNumber();
-  console.log(`Current SimpleVerifier value: ${currentValue}`);
-
-  const { tx } = await deployed.write(currentValue + 1);
-  console.log(`Confirmed transaction ${tx}`);
-
-  const updatedValue = (await deployed.read()).toNumber();
-  console.log(`Updated SimpleVerifier value: ${updatedValue}`);
-
-  callback();
-};
-
+}

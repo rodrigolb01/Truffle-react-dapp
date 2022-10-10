@@ -4,13 +4,14 @@ import Setup from "./components/Setup";
 import Demo from "./components/Demo";
 import Footer from "./components/Footer";
 import Signer from "./components/Signer";
+import RsaSigner from "./components/RsaSigner";
 import "./App.css";
 
 function App() {
   return (
     <EthProvider>
       <div>
-        <Signer></Signer>
+        <RsaSigner/>
       </div>
       <div id="App" >
         <div className="container">

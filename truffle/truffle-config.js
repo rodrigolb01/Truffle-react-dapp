@@ -22,8 +22,6 @@ module.exports = {
           "https://goerli.infura.io/v3/141d722c9b834dc9a38a0bf0dd40cfe8");
       },
       network_id: 5,
-      gas: 4500000,
-      gasPrice: 10000000000,
     }
   },
 }

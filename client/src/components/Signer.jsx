@@ -8,9 +8,8 @@ const Signer = () => {
     const [message, setMessage] = useState('');
 
     const sign = async() => {
-        var data_to_sign = "Hello world!";
         console.log('signing with key: ' + privateKey);
-        var signature    =  web3.eth.accounts.sign(data_to_sign, privateKey);
+        var signature    =  web3.eth.accounts.sign(message, privateKey);
         console.log("Invoke Verifier.verify() with the following arguments:")
         console.log("messageHash: " + signature["messageHash"]);
         console.log("v          : " + signature["v"]);
